@@ -1,0 +1,10 @@
+test.ps
+bin/Debug/TreeDesign.exe
+bin/Debug/TreeDesign.exe.mdb
+docs/main.aux
+docs/main.log
+docs/main.pdf
+docs/main.synctex.gz
+obj/x86/Debug/TreeDesign.exe
+obj/x86/Debug/TreeDesign.exe.mdb
+obj/x86/Debug/TreeDesign.fsproj.FilesWrittenAbsolute.txt

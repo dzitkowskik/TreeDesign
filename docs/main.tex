@@ -1,0 +1,61 @@
+\title{
+02257 Applied functional programming \\
+Project 2\\
+Drawing Trees in F\#
+}
+\author{
+        Karol Dzitkowski - s142246,
+        Mads Egedal Kirchhoff - s093027
+}
+\date{\today}
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+\maketitle
+\setlength{\parindent}{0pt}
+With the signatures the group membersaccount for:
+\begin{enumerate}
+\item The extension from the minimal solution is made by the group
+members only
+\item No part of their solution is distributed to other groups
+\item The group members have contributed equally to the solution
+\end{enumerate}
+Group members:
+\begin{itemize}
+\item Karol Dzitkowski - s142246
+\item Mads Egedal Kirchhoff - s093027
+\end{itemize}
+Signatures:
+\clearpage
+
+\section{Status of the solution}
+We succeeded in translating the solution to $F\#$ language and it is working for all trees translated 
+to general trees from previous project (11 smaller and bigger trees). We also implemented a function
+translating Abstract Syntax Trees to general trees. We wrote a function to create a PostScript file
+containing a picture of a general tree and an algorithm is working for all the trees we tested. 
+Analysing the efficiency of our solution we conclude that our results coincide with the expected, presented
+in the article we got. We messured an execution time of 3 major parts of our project:
+\begin{enumerate}
+\item Translation (Small tree 0.023 ms, big tree 0.036 ms)
+\item Generating design tree (Small tree 0.271 ms , big tree 0.402 ms)
+\item Generating Post Script from design tree (Small tree 0.710 ms, big tree 0.933 ms) 
+\end{enumerate}
+
+\section{Extensions}
+We implemented two versions of Generation Post Script from design tree function. First of them is 
+using StringBuilder for all string concatenations, while another is using String.concat method. The
+results of the efficiency comparison are of course in favor of the StringBuilder method. For small trees
+are usually not significant (for example SB time 0.7815 ms and String.concat time 0.8947). However
+sometimes the difference is greater like: 0.8562 ms and 9.3201 ms respectively. For big trees the time
+efficiency difference was always significantly better for SB (0.6496 ms to 5.2416 ms).
+
+\section{Reflections}
+Woring on the trees in Functional Programming language is very convenient. We learned that using
+StringBuilder can have a significant influence on efficiency and sometimes can even be the most
+comfortable way of concatenating many strings. It also helps with line endings since we can use an
+ $AppendLine$ function. An natural extension should be also making a size of the Post Script page
+ depending on the size of the tree (its output maximal width and height). 
+
+\end{document}
